@@ -3,14 +3,13 @@
   "version": "1.2.34",
   "description": "Add collapse to vitepress codeblocks",
   "type": "module",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "run": "vitepress dev docs",
-    "dev": "vitepress dev",
-    "build": "vitepress build"
+    "build": "rm -rf ./dist/ && rolldown -c ./rolldown.config.ts"
   },
   "files": [
+    "dist",
     "lib",
     "style"
   ],
@@ -27,7 +26,10 @@
   "author": "T-miracle",
   "license": "MIT",
   "devDependencies": {
-    "sass": "^1.62.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "rolldown": "^1.0.0-beta.3",
+    "tslib": "^2.8.1",
     "vitepress": "^1.0.0-alpha.65",
     "vue": "^3.2.47"
   }
